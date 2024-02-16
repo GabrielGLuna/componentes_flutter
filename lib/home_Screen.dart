@@ -10,31 +10,29 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Componentes de flutter'),
       ),
         body: ListView(
-          children: const[
+          children: [
            ListTile(
-            leading: Icon(Icons.sports_soccer_rounded, color: Colors.indigo,),
+            leading: const Icon(Icons.sports_soccer_rounded, color: Colors.indigo,),
             title: Text('Pumas va a ser campeon',
-            style: TextStyle(color: Colors.blueAccent),),
-            subtitle: Text('Dejenme soñar 🥹'),
-            trailing: Icon(Icons.arrow_circle_right),
+            style:  Theme.of(context).textTheme.headlineLarge),
+            subtitle: const Text('Dejenme soñar 🥹'),
+            trailing: const Icon(Icons.arrow_circle_right),
            ),
-           Divider(
+           const Divider(
             color: Colors.black,
            ),
-           ListTile(
+          const ListTile(
             leading: Icon(Icons.sports_baseball, color: Colors.green,),
-            title: Text('Pericos va a ser campeon',
-            style: TextStyle(color: Colors.greenAccent),),
+            title: Text('Pericos va a ser campeon'),
             subtitle: Text('Ya lo son de hecho'),
             trailing: Icon(Icons.arrow_circle_right),
            ),
-           Divider(
+          const Divider(
             color: Colors.black,
            ),
-           ListTile(
+           const ListTile(
             leading: Icon(Icons.sports_score_sharp, color: Colors.red,),
-            title: Text('Sergio Perez va a ser campeon',
-            style: TextStyle(color: Colors.orange),),
+            title: Text('Sergio Perez va a ser campeon'),
             subtitle: Text('RUN RUN'),
             trailing: Icon(Icons.arrow_circle_right),
            ),
