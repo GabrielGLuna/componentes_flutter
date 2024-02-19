@@ -12,19 +12,19 @@ class HomeScreen extends StatelessWidget {
         body: ListView(
           children: [
            ListTile(
-            leading: const Icon(Icons.sports_soccer_rounded, color: Colors.indigo,),
-            title: Text('Pumas va a ser campeon',
-            style:  Theme.of(context).textTheme.headlineLarge),
-            subtitle: const Text('Dejenme soñar 🥹'),
+            leading: const Icon(Icons.flag, color: Colors.indigo),
+            title: Text('Entradas',
+            style: Theme.of(context).textTheme.headlineLarge),
+            subtitle: const Text('Diferentes widgets para entradas de flutter'),
             trailing: const Icon(Icons.arrow_circle_right),
            ),
            const Divider(
             color: Colors.black,
            ),
           const ListTile(
-            leading: Icon(Icons.sports_baseball, color: Colors.green,),
-            title: Text('Pericos va a ser campeon'),
-            subtitle: Text('Ya lo son de hecho'),
+            leading: Icon(Icons.list_alt_rounded, color: Colors.green,),
+            title: Text('ListView.builder',),
+            subtitle: Text('Scroll infinito'),
             trailing: Icon(Icons.arrow_circle_right),
            ),
           const Divider(
