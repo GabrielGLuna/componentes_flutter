@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica_3/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,25 +9,25 @@ class HomeScreen extends StatelessWidget {
     return  Scaffold(
       appBar:  AppBar(
         title:  Text('Componentes de flutter',
-         style: Theme.of(context).textTheme.headlineLarge),
+         style: AppTheme.lightTheme.textTheme.headlineLarge),
       ),
         body: ListView(
           children: [
            ListTile(
-            leading: const Icon(Icons.flag, color: Colors.indigo),
+            leading: const  Icon(Icons.flag, color: AppTheme.coloricon),
             title: Text('Entradas',
-            style: Theme.of(context).textTheme.headlineLarge),
-            subtitle: const Text('Diferentes widgets para entradas de flutter'),
+            style: AppTheme.lightTheme.textTheme.headlineLarge),
+            subtitle: Text('Diferentes widgets para entradas de flutter', style: AppTheme.lightTheme.textTheme.bodySmall,),
             trailing: const Icon(Icons.arrow_circle_right),
            ),
            const Divider(
             color: Colors.black,
            ),
            ListTile(
-            leading: const Icon(Icons.list_alt_rounded, color: Colors.green,),
+            leading: const Icon(Icons.list_alt_rounded, color: AppTheme.coloricon),
             title: Text('ListView.builder',
             style: Theme.of(context).textTheme.headlineLarge),
-            subtitle: const Text('Scroll infinito'),
+            subtitle:  Text('Scroll infinito', style: AppTheme.lightTheme.textTheme.bodySmall,),
             trailing: const Icon(Icons.arrow_circle_right),
            ),
           const Divider(
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             leading: const Icon(Icons.sports_score_sharp, color: Colors.red,),
             title: Text('Sergio Perez va a ser campeon',
              style: Theme.of(context).textTheme.headlineLarge),
-            subtitle: const Text('RUN RUN'),
+            subtitle:  Text('RUN RUN', style: Theme.of(context).textTheme.bodySmall,),
             trailing: const Icon(Icons.arrow_circle_right),
            ),
 
