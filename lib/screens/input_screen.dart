@@ -11,7 +11,7 @@ class _InputScreenState extends State<InputScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Inputs'),
+      child: Text('Entradas'),
     );
   }
 }
