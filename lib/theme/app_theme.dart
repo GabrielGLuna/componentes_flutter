@@ -32,7 +32,7 @@ class AppTheme{
         textTheme:TextTheme(
           headlineLarge: GoogleFonts.aDLaMDisplay(
             color: const Color.fromARGB(255, 245, 244, 245),
-            fontSize: 35.0,
+            fontSize: 15.0,
             fontWeight: FontWeight.w500,
             decoration: TextDecoration.underline,
             decorationColor: const Color.fromARGB(255, 158, 191, 160),
