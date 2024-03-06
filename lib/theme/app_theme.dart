@@ -49,10 +49,10 @@ class AppTheme{
             decorationThickness: 1.5
             ),
             bodySmall: GoogleFonts.albertSans(
-              color: const Color.fromARGB(255, 30, 38, 92),
+              color: Color.fromARGB(255, 1, 2, 7),
               fontSize: 20.0,
               fontWeight: FontWeight.w200,
-              decoration: TextDecoration.underline,
+              
             ),
             bodyMedium: GoogleFonts.albertSans(
               color: backColor,
