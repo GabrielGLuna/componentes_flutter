@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:practica_3/screens/data_screen.dart';
+import 'package:practica_3/screens/home_Screen.dart';
+import 'package:practica_3/screens/input_screen.dart';
+import 'package:practica_3/screens/notifications_screen.dart';
 import 'package:practica_3/theme/app_theme.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ImagesScreen extends StatefulWidget {
-  const ImagesScreen({super.key});
+  const ImagesScreen({Key? key}) : super(key: key);
 
   @override
   State<ImagesScreen> createState() => _ImagesScreenState();
 }
-
+// ignore: unused_element
 class _ImagesScreenState extends State<ImagesScreen> {
+  int selectedIndex = 0; // Movido aquí para ser un campo de clase
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -31,12 +38,28 @@ class _ImagesScreenState extends State<ImagesScreen> {
                       ),
             ],
           ),
-              imageCard(),
+              SizedBox(
+                width: 350,
+                child: imageCard()),
               imageWeb(),
         
       
       ],
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex : selectedIndex,
+        backgroundColor: const Color.fromARGB(255, 16, 255, 255),
+        unselectedItemColor: AppTheme.mainColor,
+        onTap: (index) => openScreen(index),
+        items: const[
+          BottomNavigationBarItem(icon: Icon(Icons.home, color: Color.fromARGB(221, 2, 0, 0),), label: "Inicio",),
+          BottomNavigationBarItem(icon: Icon(Icons.data_object,color: Colors.black87,), label: "data"),
+          BottomNavigationBarItem(icon: Icon(Icons.notification_add_outlined, color: Colors.black87,), label: "Noti"),
+          BottomNavigationBarItem(icon: Icon(Icons.image_search_outlined, color: Colors.black87,), label: "Imgs"),
+          BottomNavigationBarItem(icon: Icon(Icons.exit_to_app, color: Colors.black87,), label: "Salida",)
+        ],
+        unselectedLabelStyle: AppTheme.lightTheme.textTheme.headlineSmall,
+      ),
     );
   }
   Card imageCard(){
@@ -86,4 +109,36 @@ class _ImagesScreenState extends State<ImagesScreen> {
       //Image.network
     ]);
   }
+  openScreen(int index){
+    setState(() {
+      MaterialPageRoute ruta= MaterialPageRoute(builder: (context)=> const HomeScreen());
+      switch(index){
+        case 0:ruta = MaterialPageRoute(builder: (context)=> const HomeScreen());
+          break;
+        case 1:
+          ruta = MaterialPageRoute(
+            builder: (context) => DataScreen(inputData: InputData( // Aquí se proporciona el parámetro inputData
+              nombre: '',
+              gustaFlutter: false,
+              sliderValue: 0.0,
+              radioOption: 0,
+              checkBoxOption1: false,
+              checkBoxOption2: false,
+              checkBoxOption3: false,
+            )),
+          );
+          break;
+        case 2:ruta = MaterialPageRoute(builder: (context)=> const NotificationScreen());
+          break;
+        case 3:ruta =MaterialPageRoute(builder: (context)=> const ImagesScreen());
+          break;
+    }
+      selectedIndex = index;
+      Navigator.push(
+        context, 
+        ruta
+        );
+    });
+  }
+  
 }

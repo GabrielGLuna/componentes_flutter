@@ -59,6 +59,13 @@ class AppTheme{
               fontSize: 20.0,
               fontWeight: FontWeight.w200,
               decoration: TextDecoration.underline,
+            ),
+            labelLarge: GoogleFonts.aleo(
+              color: Colors.white,
+              fontSize: 30.0,
+              fontWeight: FontWeight.w300,
+              decoration: TextDecoration.none
+
             )
         )
   );
